@@ -4,24 +4,24 @@ const Meals = () => {
   const {meals} = useGlobalContext();
 
   return (
-<section>
-  <div className="container-lg ">
-    <div class="row">
+<section class="m-4">
+  <div className="container" >
+    <div class="row d-flex justify-content-center">
   
   {
     meals.map((meal)=>{
       console.log(meal);
       
-      return <div className="card m-2 col-3" >
+      return <div className="card m-2 col-md-3 " style={{"min-width":"6rem"}} >
         <img src={meal.strMealThumb} className="card-img-top" alt="..."/>
                <div className="card-body">
             <h5 className="card-title">{meal.strMeal}</h5>
      <ul class="list-group list-group-flush">
     <li class="list-group-item">{meal.strArea}</li>
-    <li class="list-group-item">{meal.strCategory}</li>
+    <li class="list-group-item text-truncate">{meal.strCategory}</li>
     
        </ul>
-             <a href="#" className="btn btn-danger">Go somewhere</a>
+             <button  className="btn btn-danger">Recipee</button>
                 </div>
        
       </div>
