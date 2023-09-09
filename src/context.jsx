@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import axios from "axios"
 
+
 const AppContext = React.createContext();
 
 const randomMealUrl="https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata";
