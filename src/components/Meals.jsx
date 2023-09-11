@@ -1,39 +1,40 @@
 import { useGlobalContext } from "../context.jsx"
 import { GrFavorite } from 'react-icons/gr';
+import Card from "./Card"
 
 const Meals = () => {
 
-  const {meals} = useGlobalContext();
+  const {meals, loading} = useGlobalContext();
+
+  
+  if(loading){
+    return(
+      <section className="d-flex justify-content-center">
+      <h4 className="">Loading...</h4>
+        </section>
+    )
+  }
+
+  if(meals.length<1){
+    return(
+      <section>
+      <h4>No meals matched your search term. Please try again.</h4>
+      </section>
+    )
+  }
 
   return (
-<section class="m-3">
+<section className="">
   <div className="container-sm" >
     <div className="row d-flex justify-content-center">
   
   {
     meals.map((meal)=>{
-      console.log(meal);
-      
-      return <div className="card m-2 col-6 col-sm-3 col-md-3 col-lg-3 text-center " key={meal.idMeal}  >
-        <img src={meal.strMealThumb} className="card-img-top" alt="..."/>
-               <div className="card-body">
-            <h5 className="card-title">{meal.strMeal}</h5>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item text-truncate">{meal.strArea}</li>
-                <li className="list-group-item text-truncate">{meal.strCategory}</li>
-                <li className="list-group-item text-truncate">  
-               <GrFavorite style={{color:"red"}}/></li>
-               
-    
-       </ul>
-             <button type="button"  className=" btn btn-danger mt-2">Recipee</button>
-
-                </div>
-       
-      </div>
+      return <Card meal={meal}/>
     })
   }
-    </div></div>
+    </div>
+  </div>
 </section>
   )
 
