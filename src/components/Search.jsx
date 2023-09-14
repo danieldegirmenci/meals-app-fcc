@@ -1,28 +1,52 @@
-import {useState} from "react"
+import { useState } from "react"
 import { useGlobalContext } from "../context.jsx"
 
+
 const Search = () => {
+  const { setSearchTerm, fetchRandomMeal } = useGlobalContext();
+
+  const [text, setText] = useState("");
+
+  const handleChange = (e) => {
+    setText(e.target.value);
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(text) {
+      setSearchTerm(text);
+    }
+
+  }
+
+  const handleRandomMeal = () => {
+    setSearchTerm("");
+    setText("");
+    fetchRandomMeal();
+
+  }
 
   return (
     <header>
-    <nav class="navbar navbar-dark bg-danger navbar-expand-sm ">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">feed me</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse " id="navbarSupportedContent">
-      
-      <form class="d-flex mx-auto " role="search">
-        <input class="form-control m-2 " type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-warning mx-2 " type="submit">Search</button>
-        <button class="btn btn-outline-warning mx-4 text-nowrap" type="submit">Surprise Me</button>
-      </form>
-        
-    </div>
-  </div>
-</nav>
-    
+      <nav className="navbar navbar-dark bg-danger navbar-expand-sm ">
+        <div className="container-fluid">
+          <a className="navbar-brand" >feed me</a>
+          <button className="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse " id="navbarSupportedContent">
+
+            <form className="d-flex mx-auto m-4" role="search" onSubmit={handleSubmit}>
+              <input className="form-control mx-4 " type="search" placeholder="Find Meal" aria-label="Search" onChange={handleChange} value={text} />
+              <button className="btn btn-outline-light mx-1 " type="submit" onSubmit={handleSubmit}>Search</button>
+              <button className="btn btn-outline-light mx-1 text-nowrap" type="button" onClick={handleRandomMeal}>Surprise Me</button>
+            </form>
+
+          </div>
+        </div>
+      </nav>
+
     </header>
   )
 }

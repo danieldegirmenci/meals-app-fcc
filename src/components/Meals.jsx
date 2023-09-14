@@ -1,5 +1,4 @@
 import { useGlobalContext } from "../context.jsx"
-import { GrFavorite } from 'react-icons/gr';
 import Card from "./Card"
 
 const Meals = () => {
@@ -24,13 +23,13 @@ const Meals = () => {
   }
 
   return (
-<section className="">
+<section className="my-4">
   <div className="container-sm" >
     <div className="row d-flex justify-content-center">
   
   {
     meals.map((meal)=>{
-      return <Card meal={meal}/>
+      return <Card meal={meal} key={meal.idMeal}/>
     })
   }
     </div>
