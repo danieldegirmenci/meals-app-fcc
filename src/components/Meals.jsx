@@ -8,9 +8,9 @@ const Meals = () => {
   
   if(loading){
     return(
-      <section className="d-flex justify-content-center">
-      <h4 className="">Loading...</h4>
-        </section>
+      <div class="spinner-border text-danger" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
     )
   }
 
