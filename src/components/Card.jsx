@@ -1,6 +1,11 @@
 import { GrFavorite } from 'react-icons/gr';
+import {useGlobalContext} from "../context"
+
 
 const Card = ({ meal }) => {
+
+  const {selectMeal}= useGlobalContext();
+
 
   const { idMeal, strMealThumb: image, strMeal: title, strArea: region, strCategory: category } = meal
   return (
@@ -17,7 +22,7 @@ const Card = ({ meal }) => {
 
 
         </ul>
-        <button type="button" className=" btn btn-danger mt-2">Recipe</button>
+        <button type="button" className=" btn btn-danger mt-2" onClick={()=>selectMeal(idMeal)} data-bs-toggle="modal" data-bs-target="#staticBackdrop">Recipe</button>
 
       </div>
       </div>
