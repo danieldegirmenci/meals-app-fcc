@@ -4,27 +4,8 @@ import {useGlobalContext} from "../context"
 
 const Modal = () => {
 
-  const {selectedMeal,closeModal}=useGlobalContext();
-  const ingredients=[];
-  const measurements=[];
-  if(selectedMeal){
-  for(let i=1;i<20;i++){
-    let ingredientDataKey=`strIngredient${i}`;
-    let ingredientValue=selectedMeal[ingredientDataKey];
-    if (ingredientValue && ingredientValue.trim() !== "") {
-      ingredients.push(ingredientValue);
-  }
-  }
- 
-  for(let i=1;i<20;i++){
-    let measurementDataKey=`strMeasure${i}`;
-    let measurementValue=selectedMeal[measurementDataKey];
-    if (measurementValue && measurementValue.trim() !== "") {
-      measurements.push(measurementValue);
-  }
-  }
-
-}
+  const {selectedMeal,measurements,ingredients}=useGlobalContext();
+  
 const { strMeal: title,strMealThumb:image } = selectedMeal || {};
 
 
@@ -39,41 +20,30 @@ const { strMeal: title,strMealThumb:image } = selectedMeal || {};
       </div>
       
 
-      <div className="modal-body">
+      <div className="modal-body d-flex">
       
-
-        
-            <div className="dropdown">
-              <button
-                className="btn btn-danger dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton"
-                data-bs-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="true"
-              >
-                Ingredients
-              </button>
-             
-              <ul
-                className="dropdown-menu"
-                aria-labelledby="dropdownMenuButton"
-              >
+                <img src={image} className="img-fluid  w-50 h-50 rounded" alt={title}/>
+                <ul className="list-group-flush list-group">
+               
                 {ingredients.map((ingredient, index) => (
-                  <li className="dropdown-item" key={index}>
-                    {ingredient}: {measurements[index]}
+                  <li className="list-group-item" key={index}>
+                    {ingredient}: <span class="badge bg-danger rounded-pill">{measurements[index]}</span> 
                   </li>
                 ))}
-              </ul>
-              </div>
-              
+                </ul>
+                </div>
+                <div className="modal-content">
+                  <div className="modal-body">
+                    selam
+                  </div>
+                </div>
               
            
 
-      </div>
+      
       <div className="modal-footer">
-        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" className="btn btn-primary">Understood</button>
+        <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Watch</button>
+        <button type="button" className="btn btn-danger">Source</button>
       </div>
     </div>
   </div>

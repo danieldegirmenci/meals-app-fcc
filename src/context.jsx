@@ -15,9 +15,30 @@ const AppProvider = ({ children }) => {
 const[showModal,setShowModal]=useState(false);
   const [selectedMeal,setSelectedMeal]=useState(null);
 
-const closeModal=()=>{
-  setShowModal(false);
+
+  const ingredients=[];
+  const measurements=[];
+  if(selectedMeal){
+  for(let i=1;i<20;i++){
+    let ingredientDataKey=`strIngredient${i}`;
+    let ingredientValue=selectedMeal[ingredientDataKey];
+    if (ingredientValue && ingredientValue.trim() !== "") {
+      ingredients.push(ingredientValue);
+  }
+  }
+ 
+  for(let i=1;i<20;i++){
+    let measurementDataKey=`strMeasure${i}`;
+    let measurementValue=selectedMeal[measurementDataKey];
+    if (measurementValue && measurementValue.trim() !== "") {
+      measurements.push(measurementValue);
+  }
+  }
+
 }
+
+
+
   const selectMeal=(idMeal)=>{
  let meal;
     meal=meals.find((meal)=>meal.idMeal===idMeal);
@@ -59,7 +80,7 @@ const closeModal=()=>{
 
   return (
     <AppContext.Provider
-      value={{meals, loading, setSearchTerm, fetchRandomMeal,showModal,selectMeal,selectedMeal,closeModal}}>
+      value={{meals, loading, setSearchTerm, fetchRandomMeal,showModal,selectMeal,selectedMeal,ingredients, measurements}}>
       {children}
     </AppContext.Provider>)
 
