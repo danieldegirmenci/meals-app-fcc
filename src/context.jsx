@@ -51,6 +51,9 @@ const[showModal,setShowModal]=useState(false);
     fetchData(randomMealUrl);
   }
 
+  const getAllMeals=()=>{
+fetchData(allMealsUrl)
+  }
   const fetchData = async (url) => {
     setLoading(true);
     try {
@@ -70,7 +73,7 @@ const[showModal,setShowModal]=useState(false);
   }
 
   useEffect(() => {
-    fetchData(allMealsUrl)
+    fetchData(allMealsUrl);
   }, []);
 
   useEffect(() => {
@@ -80,7 +83,7 @@ const[showModal,setShowModal]=useState(false);
 
   return (
     <AppContext.Provider
-      value={{meals, loading, setSearchTerm, fetchRandomMeal,showModal,selectMeal,selectedMeal,ingredients, measurements}}>
+      value={{getAllMeals,meals, loading, setSearchTerm, fetchRandomMeal,showModal,selectMeal,selectedMeal,ingredients, measurements}}>
       {children}
     </AppContext.Provider>)
 

@@ -16,7 +16,7 @@ const showModal=useGlobalContext();
     <main>
      <Search /> 
       {/* <Favorites/> */}
-      <Meals />
+      <Meals  />
       {showModal&&<Modal />}
 
 

@@ -8,8 +8,10 @@ const Meals = () => {
   
   if(loading){
     return(
+      <div className="container-fluid
+      d-flex justify-content-center align-items-center " style={{ minHeight: "90vh" }}>
       <div class="spinner-border text-danger" role="status">
-      <span class="visually-hidden">Loading...</span>
+    </div>
     </div>
     )
   }
