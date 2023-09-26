@@ -18,9 +18,13 @@ const Meals = () => {
 
   if(meals.length<1){
     return(
-      <section>
+      <div className="container-fluid
+      d-flex justify-content-center align-items-center " style={{ minHeight: "80vh" }}>
       <h4>No meals matched your search term. Please try again.</h4>
-      </section>
+    </div>
+    
+      
+      
     )
   }
 
