@@ -7,7 +7,7 @@ const Modal = () => {
   const {selectedMeal, measurements, ingredients} = useGlobalContext();
 
   const { strMeal: title, strMealThumb: image, strInstructions
-    : recipe } = selectedMeal || {};
+    : recipe, strYoutube:videoSource,strSource:source } = selectedMeal || {};
 
 
 
@@ -45,8 +45,8 @@ const Modal = () => {
 
 
           <div className="modal-footer">
-            <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Watch</button>
-            <button type="button" className="btn btn-danger">Source</button>
+            <a className="btn btn-danger"  target="_blank" href={videoSource}> Watch</a>
+            <a  className="btn btn-danger" target="_blank" href={source}>Source</a>
           </div>
         </div>
       </div>
