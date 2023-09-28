@@ -43,8 +43,8 @@ const Search = () => {
               <button className="btn btn-outline-light" type="submit" onSubmit={handleSubmit}>Search</button>
               </div>
               <div className="d-flex h-50 my-4 w-50 flex-md-row flex-column">
-            <button className="btn btn-outline-light  text-nowrap mx-4 m-2" type="submit" onClick={getAllMeals}>All meals</button>
-            <button className="btn btn-outline-light text-nowrap mx-4" type="button" onClick={handleRandomMeal}>Surprise Me</button>
+            <button className="btn btn-outline-light  text-nowrap mb-md-2 mx-4 " type="submit" onClick={getAllMeals}>All meals</button>
+            <button className="btn btn-outline-light text-nowrap mt-md-2 mx-4" type="button" onClick={handleRandomMeal}>Surprise Me</button>
             </div>
             
               
