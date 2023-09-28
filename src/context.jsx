@@ -7,6 +7,19 @@ const AppContext = React.createContext();
 const randomMealUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
 const allMealsUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
+
+const getFavoritesFromLocalStorage=()=>{
+  let favorites=localStorage.getItem("favorites");
+  if(favorites){
+    favorites=JSON.parse(locoalStoraage.getItem("favorites"))
+  }
+  else{
+    favorites=[];
+  }
+  return favorites
+}
+
+
 const AppProvider = ({ children }) => {
 
   const [meals, setMeals] = useState([]);
@@ -14,6 +27,26 @@ const AppProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
 const[showModal,setShowModal]=useState(false);
   const [selectedMeal,setSelectedMeal]=useState(null);
+  const [favorites,setFavorites]=useState([]);
+
+  
+
+  const addToFavorites=(idMeal)=>{
+    let meal=meals.find((meal)=>meal.idMeal===idMeal);
+    let alreadyFavorite=favorites.find((meal)=>meal.idMeal===idMeal)?true:false;
+    if(!alreadyFavorite){
+      const updatedFavorites=[...favorites,meal];
+      localStorage.setItem("favorites",JSON.stringify(updatedFavorites))
+      setFavorites(updatedFavorites);
+    }
+
+  }
+
+  const removeFromFavorites=(idMeal)=>{
+ let updatedFavorites=favorites.filter((meal)=>meal.idMeal!==idMeal);
+ setFavorites(updatedFavorites);
+ localStorage.setItem("favorites",JSON.stringify(updatedFavorites))
+  }
 
 
   const ingredients=[];
@@ -39,9 +72,14 @@ const[showModal,setShowModal]=useState(false);
 
 
 
-  const selectMeal=(idMeal)=>{
+  const selectMeal=(idMeal,favoriteMeal)=>{
  let meal;
-    meal=meals.find((meal)=>meal.idMeal===idMeal);
+ if(favoriteMeal){
+  meal=favorites.find((meal)=>meal.idMeal===idMeal);
+
+ }
+ else{
+    meal=meals.find((meal)=>meal.idMeal===idMeal);}
     setSelectedMeal(meal)
    setShowModal(true);
   }
@@ -83,7 +121,7 @@ fetchData(allMealsUrl)
 
   return (
     <AppContext.Provider
-      value={{getAllMeals,meals, loading, setSearchTerm, fetchRandomMeal,showModal,selectMeal,selectedMeal,ingredients, measurements}}>
+      value={{getAllMeals,meals, loading, setSearchTerm, fetchRandomMeal,showModal,selectMeal,selectedMeal,ingredients, measurements,favorites,addToFavorites,removeFromFavorites}}>
       {children}
     </AppContext.Provider>)
 

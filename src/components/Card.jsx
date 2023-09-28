@@ -4,7 +4,7 @@ import {useGlobalContext} from "../context"
 
 const Card = ({ meal }) => {
 
-  const {selectMeal}= useGlobalContext();
+  const {selectMeal,addToFavorites}= useGlobalContext();
 
 
   const { idMeal, strMealThumb: image, strMeal: title, strArea: region, strCategory: category } = meal
@@ -18,7 +18,7 @@ const Card = ({ meal }) => {
           <li className="list-group-item text-truncate">{region}</li>
           <li className="list-group-item text-truncate">{category}</li>
           <li className="list-group-item text-truncate">
-            <GrFavorite style={{ color: "red" }} /></li>
+            <GrFavorite size={"20px"} onClick={()=>addToFavorites(idMeal)}/></li>
 
 
         </ul>

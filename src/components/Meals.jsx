@@ -10,7 +10,7 @@ const Meals = () => {
     return(
       <div className="container-fluid
       d-flex justify-content-center align-items-center " style={{ minHeight: "90vh" }}>
-      <div class="spinner-border text-danger" role="status">
+      <div className="spinner-border text-danger" role="status">
     </div>
     </div>
     )

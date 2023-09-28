@@ -12,7 +12,7 @@ const Modal = () => {
 
 
   return (
-    <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div className="modal fade" id="staticBackdrop" tabIndex="-1" >
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
@@ -24,7 +24,7 @@ const Modal = () => {
           <div className="modal-body d-flex ">
 
            
-            <ul className="list-group-flush list-group">
+            <ul className="list-group-flush list-group p-3">
 
               {ingredients.map((ingredient, index) => (
                 <li className="list-group-item" key={index}>
@@ -32,21 +32,20 @@ const Modal = () => {
                 </li>
               ))}
             </ul>
-            <img src={image} className="img-fluid   w-50 h-50 rounded" alt={title} />
+            <img src={image} className="img-fluid w-50 h-50 rounded" alt={title} />
           </div>
           <div className="modal-content ">
-            <div className="modal-title modal-header fs-5">Instructions</div>
-            <div className="modal-body">
-              {recipe}
+            <div className="modal-title modal-header fs-4">Instructions</div>
+            <div className="modal-body fs-6">{recipe}
             </div>
           </div>
 
 
 
 
-          <div className="modal-footer">
+          <div className="modal-footer mt-3 d-flex justify-content-center">
             <a className="btn btn-danger"  target="_blank" href={videoSource}> Watch</a>
-            <a  className="btn btn-danger" target="_blank" href={source}>Source</a>
+            <a  className="btn btn-danger " target="_blank" href={source}>Source</a>
           </div>
         </div>
       </div>
