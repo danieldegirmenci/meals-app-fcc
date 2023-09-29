@@ -23,8 +23,8 @@ const [showFavorites, setShowFavorites]=useState(false);
   favorites.map((item)=>{
     const {idMeal, strMealThumb:image,strMeal:title}=item
     return <li key={idMeal} className="border-none d-flex flex-column list-group-item col-3  col-md-2 col-sm-6 bg-danger border border-0" >
-      <span className="text-light text-wrap">{title}</span>
-      <img src={image} className="img-thumbnail" alt="image" onClick={()=>{selectMeal(idMeal,true)}}/>
+      <span className="text-light text-center text-wrap p-1">{title}</span>
+      <img src={image} className="img-thumbnail border border-0" alt="image" onClick={()=>{selectMeal(idMeal,true)}}/>
 <MdDeleteForever style={{"color":"white"}} className="align-self-center my-2" size={25} onClick={()=>{removeFromFavorites(idMeal)}}/>
            </li>
   })
