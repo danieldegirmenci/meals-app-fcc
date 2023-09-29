@@ -25,9 +25,9 @@ const Search = () => {
 
   return (
     <header>
-      <nav className="navbar navbar-dark bg-danger navbar-expand-md">
+      <nav className="navbar navbar-dark bg-danger navbar-expand-md p-2">
         <div className="container-fluid">
-          <div className="navbar-brand" style={{ cursor: "pointer" }}>
+          <div className="navbar-brand my-2" style={{ cursor: "pointer" }}>
             <a onClick={getAllMeals}>feed me</a>
           </div>
           <button
@@ -50,9 +50,31 @@ const Search = () => {
               role="search"
               onSubmit={handleSubmit}
             >
+                <div className="
+                d-flex flex-row 
+                flex-column-row align-items-center 
+                m-2 my-md-3
+                justify-content-between
+                mx-4">
+                <button
+                  className="btn btn-outline-light mx-md-4"
+                  type="submit"
+                  onClick={getAllMeals}
+                >
+                  All meals
+                </button>
+                <button
+                  className="
+                  text-wrap-no-wrap btn btn-outline-light mx-md-4"
+                  type="button"
+                  onClick={handleRandomMeal}
+                >
+                  Surprise Me
+                </button>
+              </div>
               <div className="d-flex flex-column flex-md-row align-items-center">
                 <input
-                  className="form-control mx-md-4 my-2 my-md-0"
+                  className="form-control w-50 mx-md-4 my-2 my-md-0"
                   type="search"
                   placeholder="Find Meal"
                   aria-label="Search"
@@ -67,22 +89,7 @@ const Search = () => {
                   Search
                 </button>
               </div>
-              <div className="d-flex flex-column flex-md-row align-items-center mt-2 mt-md-0">
-                <button
-                  className="btn btn-outline-light mx-md-4"
-                  type="submit"
-                  onClick={getAllMeals}
-                >
-                  All meals
-                </button>
-                <button
-                  className="btn btn-outline-light mx-md-4"
-                  type="button"
-                  onClick={handleRandomMeal}
-                >
-                  Surprise Me
-                </button>
-              </div>
+            
             </form>
           </div>
         </div>

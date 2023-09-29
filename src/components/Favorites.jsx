@@ -16,7 +16,7 @@ const [showFavorites, setShowFavorites]=useState(false);
     <div className="bg-danger text-light">
       <h3 className=" text-center p-3"><button className="btn text-light" onClick={toggleFavorites}>
       Favorites</button></h3>
-
+  
    {showFavorites&&( 
    <ul className="list-group list-group-horizontal bg-danger p-3 container d-flex" style={{"flexWrap":"wrap"}}>
 {
