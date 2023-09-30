@@ -43,6 +43,9 @@ const[showModal,setShowModal]=useState(false);
 
       localStorage.setItem("favorites",JSON.stringify(updatedFavorites))
     }
+    else{
+      removeFromFavorites(idMeal)
+    }
 
   }
 

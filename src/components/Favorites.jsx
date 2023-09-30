@@ -25,7 +25,7 @@ const [showFavorites, setShowFavorites]=useState(false);
     return <li key={idMeal} className="d-flex flex-column list-group-item col-3  col-md-2 col-sm-4 bg-danger border border-0 align-items-center" >
       <span className="text-light text-center text-wrap p-1">{title}</span>
       <img src={image} className="img-thumbnail border border-0" alt="image" onClick={()=>{selectMeal(idMeal,true)}}/>
-<MdDeleteForever style={{"color":"white"}} className="align-self-center my-2" size={25} onClick={()=>{removeFromFavorites(idMeal)}}/>
+<MdDeleteForever class="icon m-2" style={{"color":"white"}} className="align-self-center my-2" size={25} onClick={()=>{removeFromFavorites(idMeal)}}/>
            </li>
   })
 }
