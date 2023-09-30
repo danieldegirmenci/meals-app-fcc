@@ -24,7 +24,7 @@ const Modal = () => {
           <div className="modal-body d-flex ">
 
            
-            <ul className="list-group-flush list-group p-3">
+            <ul className="list-group-flush list-group p-3 w-50">
 
               {ingredients.map((ingredient, index) => (
                 <li className="list-group-item" key={index}>

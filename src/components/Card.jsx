@@ -23,7 +23,7 @@ const Card = ({ meal }) => {
 
 
         </ul>
-        <button type="button" className=" btn btn-danger mt-2" onClick={()=>selectMeal(idMeal)} data-bs-toggle="modal" data-bs-target="#modal" data-backdrop="false" >Recipe</button>
+        <button type="button" className=" btn btn-danger mt-2" onClick={()=>selectMeal(idMeal)} data-bs-toggle="modal" data-bs-target="#modal" >Recipe</button>
 
       </div>
       </div>
