@@ -54,10 +54,10 @@ const Search = () => {
                 d-flex flex-row 
                 flex-column-row align-items-center 
                 m-2 my-md-3
-                justify-content-between
+                justify-content-center
                 mx-4">
                 <button
-                  className="btn btn-outline-light mx-md-4"
+                  className="btn btn-outline-light mx-md-4 mx-1"
                   type="submit"
                   onClick={getAllMeals}
                 >
@@ -65,7 +65,7 @@ const Search = () => {
                 </button>
                 <button
                   className="
-                  text-wrap-no-wrap btn btn-outline-light mx-md-4"
+                  text-wrap-no-wrap btn btn-outline-light mx-md-4 mx-1"
                   type="button"
                   onClick={handleRandomMeal}
                 >

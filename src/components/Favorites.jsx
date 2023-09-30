@@ -18,11 +18,11 @@ const [showFavorites, setShowFavorites]=useState(false);
       Favorites</button></h3>
   
    {showFavorites&&( 
-   <ul className="list-group list-group-horizontal bg-danger p-3 container d-flex" style={{"flexWrap":"wrap"}}>
+   <ul className="list-group list-group-horizontal bg-danger p-3 container d-flex justify-content-center" style={{"flexWrap":"wrap"}}>
 {
-  favorites.map((item)=>{
-    const {idMeal, strMealThumb:image,strMeal:title}=item
-    return <li key={idMeal} className="d-flex flex-column list-group-item col-3  col-md-2 col-sm-6 bg-danger border border-0" >
+  favorites.map((meal)=>{
+    const {idMeal, strMealThumb:image,strMeal:title}=meal
+    return <li key={idMeal} className="d-flex flex-column list-group-item col-3  col-md-2 col-sm-4 bg-danger border border-0 align-items-center" >
       <span className="text-light text-center text-wrap p-1">{title}</span>
       <img src={image} className="img-thumbnail border border-0" alt="image" onClick={()=>{selectMeal(idMeal,true)}}/>
 <MdDeleteForever style={{"color":"white"}} className="align-self-center my-2" size={25} onClick={()=>{removeFromFavorites(idMeal)}}/>

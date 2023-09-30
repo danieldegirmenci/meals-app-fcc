@@ -12,11 +12,11 @@ const Modal = () => {
 
 
   return (
-    <div className="modal fade" id="staticBackdrop" tabIndex="-1" >
-      <div className="modal-dialog">
-        <div className="modal-content">
+    <div className="modal fade" id="modal" tabIndex="-1">
+      <div className="modal-dialog modal-lg">
+        <div className="modal-content d-flex flex-column">
           <div className="modal-header">
-            <h1 className="modal-title fs-2" id="staticBackdropLabel">{title}</h1>
+            <h1 className="modal-title fs-2" id="modalLabel">{title}</h1>
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
 
@@ -28,7 +28,7 @@ const Modal = () => {
 
               {ingredients.map((ingredient, index) => (
                 <li className="list-group-item" key={index}>
-                  {ingredient}: <span class="badge bg-danger rounded-pill">{measurements[index]}</span>
+                  {ingredient}: <span className="badge bg-danger rounded-pill">{measurements[index]}</span>
                 </li>
               ))}
             </ul>
@@ -44,8 +44,11 @@ const Modal = () => {
 
 
           <div className="modal-footer mt-3 d-flex justify-content-center">
-            <a className="btn btn-danger"  target="_blank" href={videoSource}> Watch</a>
-            <a  className="btn btn-danger " target="_blank" href={source}>Source</a>
+  <a className="btn btn-danger"  target="_blank" href={videoSource}> Watch</a>
+    <a 
+    className="btn btn-danger "
+     target="_blank"
+      href={source}>Source</a>
           </div>
         </div>
       </div>

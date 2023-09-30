@@ -32,8 +32,6 @@ const[showModal,setShowModal]=useState(false);
   const [favorites,setFavorites]=useState(initialFavorites);
 
   
-  
-  
   const addToFavorites=(idMeal)=>{
     const meal=meals.find((meal)=>meal.idMeal===idMeal);
     const alreadyFavorite=favorites.find((meal)=>meal.idMeal===idMeal)?true:false;
