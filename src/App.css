@@ -82,3 +82,12 @@ html {
 }
 
 
+.icon{
+  transition:all .1s ease-in-out
+}
+.icon:hover{
+  transform:scale(1.2)
+}
+.icon:active{
+  transform: scale(0.9);
+}

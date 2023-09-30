@@ -19,7 +19,9 @@ const Card = ({ meal }) => {
           <li className="list-group-item text-truncate">{region}</li>
           <li className="list-group-item text-truncate">{category}</li>
           <li className="list-group-item text-truncate">
-            <MdFavorite size={"20px"} onClick={()=>addToFavorites(idMeal)}/></li>
+            <MdFavorite className="icon" size={"20px"}
+             onClick={()=>addToFavorites(idMeal)}
+             color="#DC3545"/></li>
 
 
         </ul>
