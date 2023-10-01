@@ -27,7 +27,7 @@ const Search = () => {
     <header>
       <nav className="navbar navbar-dark bg-danger navbar-expand-md p-2">
         <div className="container-fluid">
-          <div className="navbar-brand my-2 fs-3 link" style={{ cursor: "pointer" }}>
+          <div className="navbar-brand my-2 fs-3 card-hover" style={{ "cursor": "pointer" }}>
             <a onClick={getAllMeals}>feed me</a>
           </div>
           <button

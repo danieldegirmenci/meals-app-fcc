@@ -10,7 +10,7 @@ const Card = ({ meal }) => {
 
   const { idMeal, strMealThumb: image, strMeal: title, strArea: region, strCategory: category } = meal
   return (
-    <div className="card m-2 col-5 col-sm-4 col-md-3 col-lg-3 text-center hover-shadow"
+    <div className="card card-hover m-2 col-5 col-sm-4 col-md-3 col-lg-3 text-center hover-shadow"
       id={idMeal}>
       <img src={image} className="card-img-top" alt="..." />
       <div className="card-body">
