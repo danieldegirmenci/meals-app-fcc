@@ -1,14 +1,15 @@
-import { MdFavorite } from 'react-icons/md';
+import { MdFavorite,MdFavoriteBorder } from 'react-icons/md';
 import {useGlobalContext} from "../context"
 
 
 const Card = ({ meal }) => {
 
-  const {selectMeal,addToFavorites}= useGlobalContext();
+  const {selectMeal,addToFavorites,favorites}= useGlobalContext();
 
 
 
   const { idMeal, strMealThumb: image, strMeal: title, strArea: region, strCategory: category } = meal
+  const alreadyFavorite=favorites.find((meal)=>meal.idMeal===idMeal)?true:false;
   return (
     <div className="card card-hover m-2 col-5 col-sm-4 col-md-3 col-lg-3 text-center hover-shadow"
       id={idMeal}>
@@ -19,9 +20,15 @@ const Card = ({ meal }) => {
           <li className="list-group-item text-truncate">{region}</li>
           <li className="list-group-item text-truncate">{category}</li>
           <li className="list-group-item text-truncate">
+          {  alreadyFavorite?
             <MdFavorite className="icon" size={"20px"}
              onClick={()=>addToFavorites(idMeal)}
-             color="#DC3545"/></li>
+             color="#DC3545"/>:<MdFavoriteBorder className="icon" size={"20px"}
+             onClick={()=>addToFavorites(idMeal)}
+             color="#DC3545"/>}
+             
+             
+             </li>
 
 
         </ul>
