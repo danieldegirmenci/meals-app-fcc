@@ -15,7 +15,7 @@ const {showModal,favorites}=useGlobalContext();
   return (
     <main>
      <Search /> 
-      {favorites.length>0 && <Favorites/> }
+       <Favorites/> 
       <Meals  />
       {showModal&&<Modal />}
 

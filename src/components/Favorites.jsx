@@ -3,28 +3,34 @@ import {useState} from "react";
 import {RxCross2} from "react-icons/rx";
 
 const Favorites = () => {
-const [showFavorites, setShowFavorites]=useState(false);
+//  const [showFavorites, setShowFavorites]=useState(false);
 
   const {favorites,removeFromFavorites,selectMeal}=useGlobalContext();
-
-  const toggleFavorites=()=>{
-    setShowFavorites(!showFavorites);
-  }
+  
+  // const toggleFavorites=()=>{
+  //   setShowFavorites(!showFavorites);
+  //  }
 
 
   return (
     <div className="bg-danger text-light">
       <h3 className=" text-center p-3">
-        <a className="text-decoration-none text-light fs-5 card-hover" onClick={toggleFavorites}  
-      data-bs-toggle="collapse" href="#collapseExample"
-       role="button" aria-expanded="false" aria-controls="collapseExample"
-     >
-      Favorites</a></h3>
+      <button
+  type="button"
+  className="btn btn-link text-decoration-none text-light fs-5 card-hover"
+  data-bs-toggle="collapse"
+  data-bs-target="#collapseExample"
   
-
+  aria-expanded="false"
+  aria-controls="collapseExample"
+>
+  Favorites
+</button></h3>
+  
+<div className="collapse" id="collapseExample" >
    <ul 
-   className={`collapse ${showFavorites ? 'show' : ''} list-group list-group-horizontal bg-danger p-3 container d-flex justify-content-center favs`}
-   id="collapseExample" 
+   className="list-group list-group-horizontal bg-danger p-3 container d-flex justify-content-center"
+   
    style={{"flexWrap":"wrap"}}>
 {
   favorites.map((meal)=>{
@@ -39,6 +45,7 @@ const [showFavorites, setShowFavorites]=useState(false);
   })
 }
     </ul>
+    </div>
     </div>
   )
 }
