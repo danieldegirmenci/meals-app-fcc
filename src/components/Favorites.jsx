@@ -35,10 +35,10 @@ const Favorites = () => {
 {
   favorites.map((meal)=>{
     const {idMeal, strMealThumb:image,strMeal:title}=meal
-    return <li  key={idMeal} className="d-flex flex-column list-group-item col-3  col-md-2 col-sm-4 bg-danger border border-0 align-items-center" >
+    return <li  key={idMeal} className="d-flex flex-column list-group-item col-3  col-md-2 col-sm-4 bg-danger border border-0 align-items-center " >
       <span className="text-light text-center text-wrap p-1">{title}</span>
      
-     <img src={image} className="img-fluid rounded border border-0 icon"  alt="image" onClick={()=>{selectMeal(idMeal)}} data-bs-toggle="modal" data-bs-target="#modal" />
+     <img src={image} className="img-fluid rounded border border-0 card-hover"  alt="image" onClick={()=>{selectMeal(idMeal)}} data-bs-toggle="modal" data-bs-target="#modal" />
              <RxCross2  style={{"color":"white"}} className="align-self-center my-2 icon m-2" size={25} onClick={()=>{removeFromFavorites(idMeal)}}/>
 
            </li>
