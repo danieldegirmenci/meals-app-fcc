@@ -14,15 +14,23 @@ const {showModal,favorites}=useGlobalContext();
 const [isOpen, setIsOpen] = useState(favorites.length > 0);
 
 useEffect(()=>{
-setIsOpen(favorites.length>0)
+if(favorites.length>0){
+  setIsOpen(true);
+}
+else{
+setTimeout(()=>{
+    setIsOpen(false);  
+
+  },100)
+}
 },[favorites]);
 
   
   return (
     <main>
      <Search /> 
-     <div className={`favorites-container ${isOpen > 0 ? "show" : ""}`}>
-      {favorites.length>0 && <Favorites/> }
+     <div className={`favorites-container ${isOpen ? "show" : "hide"}`}>
+      <Favorites/> 
       </div>
       <Meals  />
       {showModal&&<Modal />}

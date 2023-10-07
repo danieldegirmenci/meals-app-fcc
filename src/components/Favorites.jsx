@@ -28,7 +28,7 @@ const Favorites = () => {
 </button></h3>
   
 <div className="collapse" id="collapseExample" >
-   <ul 
+   <ul id="liste"
    className="list-group list-group-horizontal bg-danger p-2 container d-flex justify-content-center align-items-end"
    
    style={{"flexWrap":"wrap"}}>
