@@ -4,10 +4,10 @@ import { useGlobalContext } from "../context"
 
 const Modal = () => {
 
-  const {selectedMeal, measurements, ingredients} = useGlobalContext();
+  const { selectedMeal, measurements, ingredients } = useGlobalContext();
 
   const { strMeal: title, strMealThumb: image, strInstructions
-    : recipe, strYoutube:videoSource,strSource:source } = selectedMeal || {};
+    : recipe, strYoutube: videoSource, strSource: source } = selectedMeal || {};
 
 
 
@@ -23,7 +23,7 @@ const Modal = () => {
 
           <div className="modal-body d-flex ">
 
-           
+
             <ul className="list-group-flush list-group p-3 w-50">
 
               {ingredients.map((ingredient, index) => (
@@ -44,11 +44,11 @@ const Modal = () => {
 
 
           <div className="modal-footer mt-3 d-flex justify-content-center">
-  <a className="btn btn-danger"  target="_blank" href={videoSource}> Watch</a>
-    <a 
-    className="btn btn-danger "
-     target="_blank"
-      href={source}>Source</a>
+            <a className="btn btn-danger" target="_blank" href={videoSource}> Watch</a>
+            <a
+              className="btn btn-danger "
+              target="_blank"
+              href={source}>Source</a>
           </div>
         </div>
       </div>

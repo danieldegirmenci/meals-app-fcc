@@ -50,7 +50,7 @@ const Search = () => {
               role="search"
               onSubmit={handleSubmit}
             >
-                <div className="
+              <div className="
                 d-flex flex-row 
                 flex-column-row align-items-center 
                 m-2 my-md-3
@@ -89,7 +89,7 @@ const Search = () => {
                   Search
                 </button>
               </div>
-            
+
             </form>
           </div>
         </div>

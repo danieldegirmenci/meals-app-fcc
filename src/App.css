@@ -1,17 +1,18 @@
-
- @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap');
 
 *,
 ::after,
 ::before {
   box-sizing: border-box;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   font-size: 100%;
-} /*16px*/
+}
+
+/*16px*/
 
 :root {
   /* colors */
@@ -68,47 +69,51 @@ html {
 }
 
 
-*{
- font-family: 'Rajdhani', sans-serif;
+* {
+  font-family: 'Rajdhani', sans-serif;
 }
+
 .hover-shadow {
   transition: box-shadow 0.3s ease;
-  padding:5px;
+  padding: 5px;
 }
 
 .hover-shadow:hover {
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6); 
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
 
 }
 
 
-.icon,.card-hover{
-  transition:all .2s ease-in-out;
-  cursor:pointer;
+.icon,
+.card-hover {
+  transition: all .2s ease-in-out;
+  cursor: pointer;
 }
-.icon:hover{
-  transform:scale(1.2)
+
+.icon:hover {
+  transform: scale(1.2)
 }
+
 .icon:active {
   transform: scale(0.9);
 }
 
-.card-hover:hover{
-  transform:scale(1.03)
+.card-hover:hover {
+  transform: scale(1.03)
 }
 
 .favorites-container {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.7s ease-in-out;
 }
 
 .favorites-container.show {
   max-height: 500px;
-  transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.7s ease-in-out;
 }
 
 .favorites-container.hide {
   max-height: 0;
-  transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.7s ease-in-out;
 }
