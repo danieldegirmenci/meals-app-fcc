@@ -96,3 +96,14 @@ html {
 .card-hover:hover{
   transform:scale(1.03)
 }
+
+.favorites-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.favorites-container.show {
+  max-height: 500px;
+  transition: max-height 0.5s ease-in-out;
+}

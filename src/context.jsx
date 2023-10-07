@@ -28,7 +28,7 @@ const AppProvider = ({ children }) => {
 const[showModal,setShowModal]=useState(false);
   const [selectedMeal,setSelectedMeal]=useState(null);
 
-  const initialFavorites =getFavoritesFromLocalStorage();
+  const initialFavorites=getFavoritesFromLocalStorage();
   const [favorites,setFavorites]=useState(initialFavorites);
 
   
@@ -38,10 +38,10 @@ const[showModal,setShowModal]=useState(false);
     if(!alreadyFavorite){
       const updatedFavorites=[...favorites,meal];
       setFavorites(updatedFavorites);
-      localStorage.setItem("favorites",JSON.stringify(updatedFavorites))
+      localStorage.setItem("favorites",JSON.stringify(updatedFavorites));
     }
     else{
-      removeFromFavorites(idMeal)
+      removeFromFavorites(idMeal);
     }
 
   }
