@@ -39,6 +39,7 @@ const[showModal,setShowModal]=useState(false);
       const updatedFavorites=[...favorites,meal];
       setFavorites(updatedFavorites);
       localStorage.setItem("favorites",JSON.stringify(updatedFavorites));
+      console.log(favorites)
     }
     else{
       removeFromFavorites(idMeal);
@@ -80,7 +81,8 @@ const[showModal,setShowModal]=useState(false);
  let meal;
  if(favoriteMeal){
   meal=favorites.find((meal)=>meal.idMeal===idMeal);
-  setSelectedMeal(meal)
+  setSelectedMeal(meal);
+  console.log(meal)
    setShowModal(true);
 
  }
