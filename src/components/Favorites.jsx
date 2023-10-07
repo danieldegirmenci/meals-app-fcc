@@ -14,7 +14,7 @@ const Favorites = () => {
 
   return (
     <div className="bg-danger text-light">
-      <h3 className=" text-center p-3">
+      <h3 className=" text-center p-2">
       <button
   type="button"
   className="btn btn-link text-decoration-none text-light fs-5 card-hover"
@@ -29,7 +29,7 @@ const Favorites = () => {
   
 <div className="collapse" id="collapseExample" >
    <ul 
-   className="list-group list-group-horizontal bg-danger p-3 container d-flex justify-content-center"
+   className="list-group list-group-horizontal bg-danger p-2 container d-flex justify-content-center align-items-end"
    
    style={{"flexWrap":"wrap"}}>
 {
