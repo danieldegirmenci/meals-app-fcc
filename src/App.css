@@ -105,15 +105,15 @@ html {
 .favorites-container {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.7s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
 }
 
 .favorites-container.show {
-  max-height: 500px;
-  transition: max-height 0.7s ease-in-out;
+  max-height: 1000px;
+  transition: max-height 0.3s ease-in-out;
 }
 
 .favorites-container.hide {
   max-height: 0;
-  transition: max-height 0.7s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
 }

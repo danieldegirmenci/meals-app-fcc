@@ -49,14 +49,20 @@ const AppProvider = ({ children }) => {
 
   const removeFromFavorites = (idMeal) => {
     const updatedFavorites = favorites.filter((meal) => meal.idMeal !== idMeal);
-    setIsOpen(false);
-    setTimeout(() => {
-      
+    if(favorites.length>1){
       setFavorites(updatedFavorites);
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites))
-      
-    }, 500);
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites))
+    }
+    else if(favorites.length===1){
+      setIsOpen(false);
+      setTimeout(() => {
+      setFavorites(updatedFavorites);
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites))
+        
+      }, 700);
+    }
     
+  
   }
 
 
@@ -66,11 +72,11 @@ const AppProvider = ({ children }) => {
     if (favorites.length > 0) {
       setIsOpen(true);
     }
-    else {
-      setTimeout(() => {
+    else if(favorites.length===0) {
+      
         setIsOpen(false);
 
-      }, 100)
+      
     }
   }, [favorites]);
 

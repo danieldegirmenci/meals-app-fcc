@@ -24,13 +24,13 @@ const Favorites = () => {
         </button></h3>
       <div className="collapse " id="collapseExample" >
         <ul
-          className="list-group list-group-horizontal bg-danger p-2 container d-flex justify-content-center align-items-end"
+          className="list-group list-group-horizontal bg-danger p-3 container d-flex justify-content-center align-items-end"
 
           style={{ "flexWrap": "wrap" }}>
           {
             favorites.map((meal) => {
               const { idMeal, strMealThumb: image, strMeal: title } = meal
-              return <li key={idMeal} className="d-flex flex-column list-group-item col-3  col-md-2 col-sm-4 bg-danger border border-0 align-items-center " >
+              return <li key={idMeal} className="d-flex flex-column list-group-item col-3  col-md-2 col-sm-3 bg-danger border border-0 align-items-center" style={{"overflow":"hidden"}} >
                 <span className="text-light text-center text-wrap p-1">{title}</span>
 
                 <img src={image} className="img-fluid rounded border border-0 card-hover" alt="image" onClick={() => { selectMeal(idMeal, true) }} data-bs-toggle="modal" data-bs-target="#modal" />
